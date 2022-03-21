@@ -1,38 +1,111 @@
-.App {
+.content {
+  position: sticky;
+  z-index: 10;  
+}
+
+Input[type=text], Input[type=tel], Input[type=email], Input[type=textarea] {
+  font-family: "Oswald", Sans-serif;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+Label {
+  font-family: "Oswald", Sans-serif;
+  color: #fff;
+}
+
+Input[type=submit] {
+  font-family: "Oswald", Sans-serif !important;
+  width: 100%;
+  background-color: #FBA702 !important;
+  color: #fff;
+  margin-top: 20px !important;
+  padding: 12px 20px !important;
+  line-height: 1 !important;
   text-align: center;
+  border: none !important;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 3000;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+Input[type=submit]:hover {
+  background-color: #041524 !important;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.fundo {
+  height: 100%;
+  width: 100%;
+  background-color: #FBA702;  
+  float: left;
+  top: 0;
+  margin-top: 30%;
+  padding: none;
+  position: fixed;
+  z-index: 9; 
+  
+}
+
+
+  h2 {
+  color: #FFFFFF;
+  font-family: "Oswald", Sans-serif;
+  font-size: 6em !important;
+  text-transform: uppercase;
+  text-align: right;
+  padding-right: 10%;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .texto {color: #FFFFFF;
+    font-family: "Oswald", Sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5%;
+    
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+  .hero {   
+    height: 100%;
+    width: 100%;
+    float: left;
+    top: 0;
+    padding: none;
+    position: fixed;
+    z-index: 0;
 }
+
+  .logo, .tel {
+    width: 80% !important;
+    float: right;
+    padding-right: 10%;
+  }
+
+  .form {
+    background-color: #062541;
+    padding: 50px !important;
+  }
+
+  .icons {
+    color: #fff;
+    margin: 10px;
+    width: 20px !important;
+    height: 20px !important;
+    float: right;
+    z-index: 3000;
+  }
+
+  .icons:hover {
+    color: #FBA702;
+    cursor: pointer;
+  } 
+
+ 
+  
+  
