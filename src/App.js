@@ -7,8 +7,9 @@ import Video from './Video';
 function App() {
 
 const [mailerState, setMailerState] = useState({
-  name: "",
   email: "",
+  name: "",
+  tel: "",
   message: "",
 });
 
@@ -22,10 +23,11 @@ function handleStateChange(e) {
 const submitEmail = async (e) => {
    e.preventDefault();
    console.log({ mailerState });
-   const response = await fetch("http://localhost:3001/send", {
+   const response = await fetch(process.env.REACT_APP_API_URL , {
      method: "POST",
      headers: {
-       "Content-type": "application/json",
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
      },
      body: JSON.stringify({ mailerState }),
    })
@@ -43,6 +45,7 @@ const submitEmail = async (e) => {
        setMailerState({
          email: "",
          name: "",
+         tel: "",
          message: "",
        });
      });
@@ -90,11 +93,11 @@ const submitEmail = async (e) => {
               <Label htmlFor="nome">Nome</Label>
               <Input type="text" id="nome" onChange={handleStateChange} name="name" placeholder="Digite Seu Nome..." value={mailerState.name}/>
               <Label htmlFor="telefone">Telefone</Label>
-              <Input type="tel" id="telefone" name="telefone" placeholder="Digite Seu Telefone..."/>
+              <Input type="tel" id="telefone" name="tel" onChange={handleStateChange} placeholder="Digite Seu Telefone..."/>
               <Label htmlFor="email">E-mail</Label>
               <Input type="email" id="email" onChange={handleStateChange} name="email" placeholder="Digite Seu E-mail..." value={mailerState.email} />
               <Label htmlFor="mensagem">Mensagem</Label>
-              <Input type="textarea" id="mensagem" name="message" placeholder="Digite Sua Mensagem..." value={mailerState.message} />
+              <Input type="textarea" id="mensagem" name="message" onChange={handleStateChange} placeholder="Digite Sua Mensagem..." />
               <Input type="submit" value="Enviar"/>
             </Form>
           </Col>
